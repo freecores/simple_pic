@@ -34,13 +34,16 @@
 
 //  CVS Log
 //
-//  $Id: simple_pic.v,v 1.1.1.1 2002-12-02 17:19:58 rherveille Exp $
+//  $Id: simple_pic.v,v 1.2 2002-12-22 16:11:03 rherveille Exp $
 //
-//  $Date: 2002-12-02 17:19:58 $
-//  $Revision: 1.1.1.1 $
+//  $Date: 2002-12-22 16:11:03 $
+//  $Revision: 1.2 $
 //  $Author: rherveille $
 //  $Locker:  $
 //  $State: Exp $
+//
+// Change History:
+//               $Log: not supported by cvs2svn $
 //
 
 
@@ -209,7 +212,7 @@ module simple_pic(
     always @(posedge clk_i or negedge rst_i)
       if (~rst_i)
           pending <= #1 {{is}{1'b0}};            // clear all pending interrupts
-      else if ( wb_wr & &adr_i )
+      else if ( wb_wr & (&adr_i) )
           pending <= #1 (pending & ~dat_i[is-1:0]) | irq_event;
       else
           pending <= #1 pending | irq_event;
