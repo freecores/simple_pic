@@ -34,16 +34,19 @@
 
 //  CVS Log
 //
-//  $Id: simple_pic.v,v 1.2 2002-12-22 16:11:03 rherveille Exp $
+//  $Id: simple_pic.v,v 1.3 2002-12-24 10:26:51 rherveille Exp $
 //
-//  $Date: 2002-12-22 16:11:03 $
-//  $Revision: 1.2 $
+//  $Date: 2002-12-24 10:26:51 $
+//  $Revision: 1.3 $
 //  $Author: rherveille $
 //  $Locker:  $
 //  $State: Exp $
 //
 // Change History:
 //               $Log: not supported by cvs2svn $
+//               Revision 1.2  2002/12/22 16:11:03  rherveille
+//               *** empty log message ***
+//
 //
 
 
@@ -62,13 +65,13 @@
 // 0x00: EdgeEnable Register
 //       bits 7:0 R/W  Edge Enable '1' = edge triggered interrupt source
 //                                 '0' = level triggered interrupt source
-// 0x02: PolarityRegister
+// 0x01: PolarityRegister
 //       bits 7:0 R/W Polarity     '1' = high level / rising edge
 //                                 '0' = low level / falling edge
-// 0x03: MaskRegister
+// 0x02: MaskRegister
 //       bits 7:0 R/W Mask         '1' = interrupt masked (disabled)
 //                                 '0' = interrupt not masked (enabled)
-// 0x04: PendingRegister
+// 0x03: PendingRegister
 //       bits 7:0 R/W Pending      '1' = interrupt pending
 //                                 '0' = no interrupt pending
 //
